@@ -31,6 +31,12 @@ ConwayCell class >> SpatialEntityPOV_dead_red [
 	^ Array with: 0.5 with: 0.0 with: 0.1
 ]
 
+{ #category : #accessing }
+ConwayCell class >> entityName [
+
+	^ 'Cell'
+]
+
 { #category : #'default value' }
 ConwayCell class >> state_default [
 
