@@ -1,1 +1,1 @@
-Package { #name : #'Conway-Model' }
+Package { #name : 'Conway-Model' }

@@ -1,1 +1,1 @@
-Package { #name : #'Conway-Model-Tests' }
+Package { #name : 'Conway-Model-Tests' }
