@@ -47,6 +47,12 @@ Class {
 	#package : 'Conway-Model'
 }
 
+{ #category : 'tests - printing' }
+ConwayModel class >> prefix [
+
+	^ 'Conway'
+]
+
 { #category : 'probes' }
 ConwayModel >> alive [
 	<probeNamed: 'Percentage of alive cells' color: '0000FF'>
