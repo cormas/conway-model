@@ -61,6 +61,6 @@ ConwayCell >> pov [
 	<pov>
 
 	^ self state = #alive
-		ifTrue: [ Color white ]
-		ifFalse: [ Color black ]
+		ifTrue: [ CMPointOfView color: Color white ]
+		ifFalse: [ CMPointOfView color: Color black ]
 ]
