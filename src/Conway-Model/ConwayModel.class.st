@@ -47,6 +47,12 @@ Class {
 	#package : 'Conway-Model'
 }
 
+{ #category : 'accessing' }
+ConwayModel class >> modelName [
+	
+	^ 'Conway'
+]
+
 { #category : 'tests - printing' }
 ConwayModel class >> prefix [
 
