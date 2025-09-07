@@ -3,7 +3,9 @@ I'm a cell of a Conway's Game of Life.
 "
 Class {
 	#name : 'ConwayCell',
-	#superclass : 'CMSpatialEntityCell',
+	#superclass : 'CMCell',
+	#traits : 'TCMCellularAutomaton',
+	#classTraits : 'TCMCellularAutomaton classTrait',
 	#category : 'Conway-Model',
 	#package : 'Conway-Model'
 }
