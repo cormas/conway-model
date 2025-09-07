@@ -40,9 +40,6 @@ Then repeat steps 4 and 5.
 Class {
 	#name : 'ConwayModel',
 	#superclass : 'CMAbstractModel',
-	#instVars : [
-		'theCells'
-	],
 	#category : 'Conway-Model',
 	#package : 'Conway-Model'
 }
@@ -69,16 +66,16 @@ ConwayModel class >> screenshotContents [
 ConwayModel >> alive [
 	<probeNamed: 'Percentage of alive cells' color: '0000FF'>
 	
-	^ (theCells count: [ :cell | cell state = #alive ])
-	  / theCells size
+	^ (self cells count: [ :cell | cell state = #alive ])
+	  / self cells size
 ]
 
 { #category : 'probes' }
 ConwayModel >> dead [
 	<probeNamed: 'Percentage of dead cells' color: 'FF0000'>
 	
-	^ (theCells count: [ :cell | cell state = #dead ])
-	  / theCells size
+	^ (self cells count: [ :cell | cell state = #dead ])
+	  / self cells size
 ]
 
 { #category : 'init' }
@@ -91,7 +88,7 @@ ConwayModel >> initRandomly [
 		neighbourhood: 8
 		closed: true.
 		
-	theCells do: #initRandomly
+	self cells do: #initRandomly
 ]
 
 { #category : 'init' }
@@ -104,14 +101,7 @@ ConwayModel >> initSmallGrid [
 		neighbourhood: 4
 		closed: false.
 		
-	theCells do: #initRandomly
-]
-
-{ #category : 'initialization' }
-ConwayModel >> initialize [
-
-	super initialize.
-	theCells := OrderedCollection new
+	self cells do: #initRandomly
 ]
 
 { #category : 'control' }
@@ -119,17 +109,4 @@ ConwayModel >> stepSynchronously: arg1 [
 	<control>
 
 	super stepSynchronously: arg1
-]
-
-{ #category : 'accessing' }
-ConwayModel >> theCells [
-	<getterFor: #ConwayCell>
-
-	^ theCells
-]
-
-{ #category : 'accessing' }
-ConwayModel >> theCells: arg1 [
-
-	theCells := arg1
 ]
