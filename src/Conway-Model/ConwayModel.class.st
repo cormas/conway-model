@@ -66,7 +66,7 @@ ConwayModel class >> screenshotContents [
 ConwayModel >> alive [
 	<probeNamed: 'Percentage of alive cells' color: '0000FF'>
 	
-	^ (self cells count: [ :cell | cell state = #alive ])
+	^ (self cells count: [ :each | each state = #alive ])
 	  / self cells size
 ]
 
@@ -74,7 +74,7 @@ ConwayModel >> alive [
 ConwayModel >> dead [
 	<probeNamed: 'Percentage of dead cells' color: 'FF0000'>
 	
-	^ (self cells count: [ :cell | cell state = #dead ])
+	^ (self cells count: [ :each | each state = #dead ])
 	  / self cells size
 ]
 

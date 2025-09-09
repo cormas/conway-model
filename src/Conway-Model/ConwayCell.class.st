@@ -34,7 +34,7 @@ ConwayCell >> initRandomly [
 ConwayCell >> newState [
 
 	| numberOfAliveNeighbours |
-	numberOfAliveNeighbours := self neighbourhood count: [ :cell | cell state = #alive ].
+	numberOfAliveNeighbours := self neighbourhood count: [ :each | each state = #alive ].
 	
 	(self state = #dead and: [ numberOfAliveNeighbours = 3 ])
 		ifTrue: [ ^ self bufferState: #alive ].
