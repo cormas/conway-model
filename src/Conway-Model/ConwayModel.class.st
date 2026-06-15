@@ -105,8 +105,8 @@ ConwayModel >> initSmallGrid [
 ]
 
 { #category : 'control' }
-ConwayModel >> stepSynchronously: arg1 [
+ConwayModel >> stepSynchronously [
 	<control>
 
-	super stepSynchronously: arg1
+	super stepSynchronously
 ]
