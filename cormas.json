@@ -1,0 +1,5 @@
+{
+	"baseline" : "ConwayModel",
+	"summary" : "Conway's Game of Life. A dead cell with exactly three live neighbours comes alive, and a live cell survives with two or three live neighbours, which is enough to make gliders, oscillators and still lifes.",
+	"cormas" : "1.0-dev"
+}
