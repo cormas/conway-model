@@ -10,6 +10,14 @@ Class {
 	#package : 'Conway-Model'
 }
 
+{ #category : 'aspects' }
+ConwayCell >> aspectDefault: look [
+	<aspect>
+	look color: (self state = #alive
+			 ifTrue: [ Color white ]
+			 ifFalse: [ Color black ])
+]
+
 { #category : 'as yet unclassified' }
 ConwayCell >> beAlive [
 	<action>
@@ -43,13 +51,4 @@ ConwayCell >> newState [
 		ifTrue: [ ^ self bufferState: #alive ].
 		
 	^ self bufferState: #dead
-]
-
-{ #category : 'pov' }
-ConwayCell >> pov [
-	<pov>
-
-	^ self state = #alive
-		ifTrue: [ CMPointOfView color: Color white ]
-		ifFalse: [ CMPointOfView color: Color black ]
 ]
