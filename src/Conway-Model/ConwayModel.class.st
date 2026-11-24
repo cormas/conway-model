@@ -64,15 +64,34 @@ ConwayModel class >> screenshotContents [
 
 { #category : 'probes' }
 ConwayModel >> alive [
-	<probeNamed: 'Percentage of alive cells' color: '0000FF'>
+	<probe>
 	
 	^ (self cells count: [ :each | each state = #alive ])
 	  / self cells size
 ]
 
+{ #category : 'charts' }
+ConwayModel >> chartCells [
+	"What share of the cells is alive, and what share is dead?"
+
+	<chart>
+	^ CMChart new
+		  title: 'Alive and dead cells';
+		  yTitle: 'Share of cells';
+		  add: (CMLineSeries new x: #currentTimeStep y: #alive;
+				   label: 'Alive cells';
+				   color: Color blue;
+				   yourself);
+		  add: (CMLineSeries new x: #currentTimeStep y: #dead;
+				   label: 'Dead cells';
+				   color: Color red;
+				   yourself);
+		  yourself
+]
+
 { #category : 'probes' }
 ConwayModel >> dead [
-	<probeNamed: 'Percentage of dead cells' color: 'FF0000'>
+	<probe>
 	
 	^ (self cells count: [ :each | each state = #dead ])
 	  / self cells size
